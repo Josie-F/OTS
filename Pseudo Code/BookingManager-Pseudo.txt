@@ -1,0 +1,13 @@
+declare class called BookingManager {
+
+  Attribute: bookingsForCurrentSession <- [] // array of bookings for current session
+
+    BookingManager Constructor  {
+    instantiate bookingsForCurrentSession
+  }
+
+  function createNewBooking
+  input: bookedSeats{
+    instantiate a new Booking(bookedSeats) and add it to bookingsForCurrentSession.
+  }
+}

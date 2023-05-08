@@ -1,0 +1,36 @@
+declare class called Show {
+  --Attributes Start--
+  name <-- String // this attribute will be the name of the show
+  id <-- String // this attribute will be the identifier for show
+  availableDates <-- [] // this attribute will be a collection of dates
+  seatsAvailable <-- integer // this attribute will indicate how many seats are available in the show
+  seats <-- [] //this attribute will indicate how many seats a show has
+  --Attributes End--
+
+  'Show' Constructor
+  input: showName, showId, dates, availableSeats {
+    assign availableSeats to seatsAssigned
+    instantiate seats to an empty arraylist
+    assign showId to id
+    assign showName to name
+    assign availableSeats to seatsAvailable
+    assign dates to availableDates
+
+    FOR ((i equals 0) TO where i is smaller than seatsAssigned, increment by 1) {
+        add a new Seat(i+1) to seats
+    }
+  }
+
+  function getName {
+    return name;
+  }
+
+  function addSeat
+  input: seat {
+    add seat to seats
+  }
+
+  function getSeats {
+    return seats;
+  }
+}

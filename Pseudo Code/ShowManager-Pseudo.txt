@@ -1,0 +1,29 @@
+declare class called ShowManager {
+  --Attributes Start--
+  shows <-- [] // list of shows
+  selectedSeats <-- [] // list of selected seats by the user
+  --Attributes End--
+
+  ShowManager Constructor {
+    instantiate shows list
+  }
+
+  function createShow
+  input: name, id, dates, seats {
+    create a new Show instance with the input variables and assign it to variable called newShow
+    add newShow to shows list
+  }
+
+  function getShowsInRange
+  output: shows {
+    return shows;
+  }
+
+  function getShow
+  input: name
+  output: Show {
+    create variable called requiredShow
+    requiredShow = filter through shows by checking if any of the show names` are equal to the input value`s name
+    return requiredShow;
+  }
+}

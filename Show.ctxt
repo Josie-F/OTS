@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Show
+comment0.text=\n\ Show\ class\n\ MVC\ \=\ Model\n
+comment1.params=showName\ showId\ dates\ availableSeats
+comment1.target=Show(java.lang.String,\ java.lang.String,\ java.util.ArrayList,\ java.lang.String)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Show\n\n\ @param\ showName\ name\ to\ assign\ to\ show\n\ @param\ showId\ id\ to\ assign\ to\ show\n\ @param\ dates\ dates\ to\ assign\ to\ show\n\ @param\ availableSeats\ number\ of\ seats\ to\ assign\ to\ show\n
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment2.text=\n\ Function\ to\ get\ show\ name\n\n\ @return\ String\ -\ show's\ name\n
+comment3.params=seat
+comment3.target=void\ addSeat(Seat)
+comment3.text=\n\ Function\ to\ add\ a\ seat\n\n\ @param\ seat\ -\ the\ seat\ to\ add\ to\ the\ seats\ array\n
+comment4.params=
+comment4.target=java.util.ArrayList\ getSeats()
+comment4.text=\n\ Function\ to\ get\ show's\ seats\n\n\ @return\ ArrayList\ -\ show's\ seats\n
+numComments=5

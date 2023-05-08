@@ -1,0 +1,167 @@
+declare class called TicketingSystemUI {
+  --Attributes Start--
+  frame <-- // this is the frame of application
+  greetingsLabel <-- input field // text to display
+  username <-- input field // username input for sign in panel
+  password <-- input field// password input for sign in panel
+  userType <-- String // indicates user type
+
+  signInMenu <-- menu // signInMenu Tab
+  managerMenu <-- menu // managerMenu Tab
+  viewMenu <-- menu // viewMenu Tab
+  signOutMenuItem <-- menuItem // sign out dropdown item
+  signInMenuItem <-- menuItem // sign in dropdown item
+
+  contentPane <-- Container// the container of the app that will show the different panels
+  showManager <-- ShowManager // instance of ShowManager
+  userManager <-- UserManager // instance of UserManager
+  bookingManager <-- BookingManager //instance of BookingManager
+  --Attributes End--
+
+  TicketingSystemUI Constructor {
+    instantiate bookingManager
+    instantiate showManager
+    instantiate userManager
+
+    call to `Make Frame` method
+  }
+
+  function makeFrame {
+    make frame
+    make base menu
+    create menu items (sign in and register/login, manage shows, and browse).
+    greetingsLabel <- "Welcome"
+    assign listeners to each menu items which points to the panels that need to be created
+    set the frame and it`s size
+  }
+
+  function makeMenu
+  input: menuBar, menuName(JMenuBar menuBar, String menuName) {
+    create menu with menuName and add it to menuBar
+    return menu
+  }
+
+  function makeMenuItem
+  input: menuItem, menu {
+    create menuItem and add it to menuBar
+    return menuItem
+  }
+
+
+  function CreateSignInPanel {
+    create the sign in panel
+    create username and password input fields and labels
+    create checkboxes for user type
+    create sign in / register button
+    add the above items to the panel
+
+    create an array which holds checkboxes
+    add two checkboxes to the array i.e "Consumer", "VenueManager"
+
+    create a user type panel
+    add the two checkboxes to the user type panel.
+    for every checkBox in userTypeCheckBoxes
+        add eventListener to checkbox
+        IF state is 'checked/selected' then
+        set userType to checkbox value
+
+    add the user typePanel and sign in / register button to the signInPanel
+    attach listener on sign in / register button which calls 'Create ConfirmDetails Panel'
+    set the frame container to signInPanel and set it`s size
+  }
+
+  function CreateConfirmDetailsPanel {
+    create confirmDetailsPanel
+    create input fields and labels for name, email and contact
+    create confirmButton
+    call method from userManager called confirmCustomerDetails and assign to string scenario or case variable
+    IF case is equal to "Returning" customer then
+      fill out the input variables with existing data
+    ELSE IF case is equal to "Incorrect login" details then
+      show an error message popup
+      return
+    IF STATEMENT END
+    attach listener to confirmButton which will call usermanager method called `update User` and call `Create ViewShows Panel`
+    set the container to confirmDetailsPanel and set it`s size
+  }
+
+
+  function CreateViewShowsPanel {
+    create viewShow panel
+    create two buttons: view shows & view events and add to panel
+    add action listeners to the buttons which will call createShowListPanel
+    set the frame container and it`s size
+  }
+
+  function CreateShowListPanel {
+    call showManager getShowsInRange and assign to allShows variable
+    create a showListModel and a showList list
+    create a list panel
+
+    create mouseListener which will listen to mouseEvents when clicking on a list item
+    call createSeatPickerPanel with the onClicked item i.e the show
+    add the mouseListener to the showlist
+
+    FOR every show in allShows {
+      add the show`s name to the showListModel
+    }
+    create a scroll pane which takes in the showList
+    add the scroll pane to the list panel
+    set the frame container and it`s size
+  }
+
+  function CreateShowCreationPanelPopUp {
+    create id, name and seatCount input fields
+    create the createShow panel
+    add the variables to the panel
+    create dates array
+    call showConfirmDialog and assign the result to a variable
+
+    IF result = OK button option then
+    call createShow on the showManager with the input values
+  }
+
+
+  function CreateSeatPickerPanel
+  input: show {
+    create seatPickerPanel
+    create seatcheckBox Array
+    create selectedSeats array
+    create selectedSeatObjects array
+    create confirmSeatsButton
+
+    FOR every seat in the given show
+      create a seat checkbox
+      IF the status of the seat is reserved then
+        set the checkbox to be disabled
+      END IF STATEMENT
+        add the seat to the arrays
+    END FOR
+
+    FOR every checkBox in seatcheckBox array
+      add an item listener which listens for when the user selects and deselects the checkbox
+      IF selected then
+        add seat to selectedSeats
+      ELSE
+        remove seat from selectedSeats
+      END IF STATEMENT
+    END FOR
+
+   add listener to confirmSeatsButton which will check -->
+    FOR each checkbox in selectedSeats
+      IF the checkbox value is equal to the the show`s seat id then add the Seat to selectedSeatObjects
+      END IF STATEMENT
+    END FOR
+    call to method createNewBooking on bookingManager with the selectedSeatObjects
+    show dialog that confirms booking and call createBookingsPanel
+   end the listener
+
+    set the frame container and it`s size
+  }
+
+  function CreateBookingsPanel {
+    create booking panel and assign a grid layout
+    add labels and booking list
+    set the frame container and it`s size
+  }
+}

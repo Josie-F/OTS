@@ -1,0 +1,20 @@
+declare class called Seat {
+
+  Attribute: id <-- integer // identifier for id
+  Attribute: status <-- String // status of the seat
+
+   Seat Constructor
+   input: seatId {
+    set id equal to seatId
+    set status to "AVAILABLE"
+  }
+
+  function setStatus
+  input: seatStatus {
+    set status equal to seatStatus
+  }
+
+  function getStatus {
+    return status;
+  }
+}

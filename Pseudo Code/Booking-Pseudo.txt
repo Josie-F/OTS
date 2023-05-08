@@ -1,0 +1,17 @@
+declare class called Booking {
+  --Attributes Start--
+  bookingId <- integer // identifier for booking.
+  bookedSeats <- [] // booked seats for the booking
+  --Attributes End--
+
+  Booking Constructor
+  input: seats {
+    FOR every seat in seats {
+      add seat to bookedSeats array
+      set seat status to "Reserved"
+    }
+
+    generate a random number;
+    set variable bookingId <-- to random number;
+  }
+}

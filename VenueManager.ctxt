@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=VenueManager
+comment0.text=\n\ Venue\ Manager\ Class\ which\ extends\ User\n\ MVC\ -\ Model\n
+comment1.params=
+comment1.target=VenueManager()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ VenueManager\n
+comment2.params=password\ username
+comment2.target=void\ assignLoggedInUserVariables(java.lang.String,\ java.lang.String)
+comment2.text=\n\ Override\ function\ that\ sets\ password\ and\ username\ and\ Id\n\ @param\ password\ password\ value\ from\ the\ input\ field\n\ @param\ username\ username\ value\ from\ the\ input\ field\n
+comment3.params=
+comment3.target=void\ setId()
+comment3.text=\n\ Function\ that\ sets\ Id\n
+numComments=4

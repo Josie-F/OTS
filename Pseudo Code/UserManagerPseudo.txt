@@ -1,0 +1,82 @@
+declare class called UserManager {
+  --Attributes Start--
+  currentUser <-- User // this attribute will be the current logged in user
+  users <-- [] // list of users signed up for the current session
+  signedIn <-- true or false // indicates whether a user is signed in or not
+  --Attributes End--
+
+  UserManager Constructor {
+    set signedIn to false
+  }
+
+  function confirmCustomerDetails
+  input: password, username, userType, signInMenuItem, managerMenuItem, viewMenuItem {
+    FOR each user in users
+    IF (call to `Verify Details` method from User class) returns true THEN
+        return call to `SignIn` method with user and input variables
+    ELSE IF (call to getUserName from User class) is equal to username from input field, but login password is incorrect
+        return "Incorrect login";
+    IF STATEMENT ENDS
+
+    IF the userType equals to "VENUEMANAGER" THEN
+      currentUser = call to signUpVenueManager with input variables: password, username, signInMenuItem, managerMenuItem;
+    ELSE
+      currentUser = call to signUpConsumer with input variables: password, username, signInMenuItem, managerMenuItem;
+    IF STATEMENT ENDS
+
+    add currentUser to users array
+    return "New";
+  }
+
+  function getUser
+  output: User {
+    return call to get getUser method from User class;
+  }
+
+  function logOut
+  input: signOutMenuItem, signInItem, managerMenu, browseMenu {
+    set signedIn to false;
+    set currentUser to null;
+
+    set signInItem.(call to setEnabled) to true
+    set signOutMenuItem.(call to setEnabled) to false
+    set managerMenu.(call to setEnabled) to false
+    set browseMenu.(call to setEnabled) to false
+  }
+
+  function signUpVenueManager
+  input:password, username, signInMenuItem, managerMenu
+  output: venueManager {
+    instantiate a new VenueManager
+    call 'assignLoginVariables' with password and username as input values on the venueManager object
+    set signedIn to true
+    set signInMenuItem.(call to setEnabled) to false
+    set managerMenu.(call to setEnabled) to true
+    return venueManager;
+  }
+
+  function signUpConsumer
+  input:password, username, signInMenuItem
+  output: consumer{
+    instantiate a new Consumer
+    call 'assignLoginVariables' with password and username as input values on the consumer object
+    set signedIn to true
+    set signInMenuItem.(call to setEnabled) to false
+
+    return consumer;
+  }
+
+  function signIn
+  input: user, menuItems, password, username
+  output: "Returning" {
+    set currentUser to user
+    set signedIn to true
+    set signInMenuItem.(call to setEnabled) to false
+    set viewMenuItem.(call to setEnabled) to true
+
+    if user type is equal to "VENUEMANAGER" {
+      set managerMenu.(call to setEnabled) to true
+    }
+    return "Returning";
+  }
+}

@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=ShowManager
+comment0.text=\n\ ShowManager\ class\ -\ acts\ as\ a\ 'controller'\ for\ Show.\n\ MVC\ -\ controller\n
+comment1.params=bookingManagerInstance
+comment1.target=ShowManager(BookingManager)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ ShowManager\n\n\ @param\ bookingManagerInstance\ instance\ of\ bookingManager\n
+comment2.params=name\ id\ dates\ seats
+comment2.target=void\ createShow(java.lang.String,\ java.lang.String,\ java.util.ArrayList,\ java.lang.String)
+comment2.text=\n\ Function\ which\ creates\ a\ show\n\ @param\ name\ name\ to\ assign\ to\ show\n\ @param\ id\ id\ to\ assign\ to\ show\n\ @param\ dates\ dates\ to\ assign\ to\ show\n\ @param\ seats\ number\ of\ seats\ for\ show\n
+comment3.params=id
+comment3.target=void\ updateShow(int)
+comment4.params=id
+comment4.target=void\ deleteShow(int)
+comment5.params=
+comment5.target=java.util.ArrayList\ getShowsInRange()
+comment5.text=\n\ Return\ shows\n\n\ @return\ ArrayList\ of\ shows\n
+comment6.params=name
+comment6.target=Show\ getShow(java.lang.Object)
+comment6.text=\n\ Return\ show\n\ @param\ name\ name\ of\ show\n\n\ @return\ Show\n
+numComments=7

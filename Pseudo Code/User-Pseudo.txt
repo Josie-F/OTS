@@ -1,0 +1,72 @@
+declare abstract class called User {
+  --Attributes Start--
+  username <-- String // attribute of user's username
+  password <-- String // attribute of user's password
+  name <-- String // attribute of user's name
+  email <-- String // attribute of user's email
+  phone <-- String // attribute of user's phone number
+  type <-- String // attribute of user's type i.e consumer or venue manager
+  --Attributes End--
+
+  User Constructor
+  input: userType {
+    set username to a String class;
+    set password to a String class;
+    set name to a String class;
+    set email to a String class;
+    set phone to a String class;
+    set type equal to userType;
+  }
+
+  function assignLoginVariables
+  input: pass, loginName {
+    set username equal to loginName
+    set password equal to pass
+  }
+
+  function updateUser
+  input: userFullName, userEmail, userPhone {
+    set name equal to userFullName
+    set email equal to userEmail
+    set phone equal to userPhone
+  }
+
+  function verifyDetails
+  input: providedUsername, providedPassword
+  output: Boolean {
+    return true if (
+      providedUsername is equal to username AND providedPassword is equal to password
+    );
+    otherwise return false
+  }
+
+  function getName
+  output: String {
+    return name;
+  }
+
+  function getUserName
+  output: String {
+    return username;
+  }
+
+  function getEmail
+  output: String {
+    return email;
+  }
+
+  function getPhone
+  output: String {
+    return phone;
+  }
+
+  function getType
+  output: String {
+    return type;
+  }
+
+  function getUser
+  output: current User instance {
+    return this;
+  }
+}

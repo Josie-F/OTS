@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=BookingManager
+comment0.text=\n\ Class\ -\ BookingManager\n\ MVC\ -\ controller\n
+comment1.params=
+comment1.target=BookingManager()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ BookingManager\n
+comment2.params=bookedSeats
+comment2.target=void\ createNewBooking(java.util.ArrayList)
+comment2.text=\n\ Create\ a\ new\ booking\n\n\ @param\ bookedSeats\ array\ of\ bookedSeats\ to\ add\ to\ booking\n
+numComments=3

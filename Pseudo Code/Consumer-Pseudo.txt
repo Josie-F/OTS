@@ -1,0 +1,19 @@
+declare class called Consumer which extends from User class {
+
+  Attribute: consumerId <- integer // identifier for the consumer object.
+
+  Consumer Constructor {
+  call parent class constructor method with string: "Consumer"
+  }
+
+  override function assignLoginVariables
+  input: password, username {
+    call parent class: assignLoginVariables method with username and password
+    call setId method
+  }
+
+  function setId {
+    generate a random number
+    assign consumerId <- random number
+  }
+}

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Seat
+comment0.text=\n\ Seat\ Class\n\ MVC\ -\ Model\n
+comment1.params=seatId
+comment1.target=Seat(int)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Seat\n\n\ @param\ seatId\ id\ to\ assign\ to\ the\ new\ seat\n
+comment2.params=seatStatus
+comment2.target=void\ setStatus(java.lang.String)
+comment2.text=\n\ Sets\ seat\ status\n\n\ @param\ seatStatus\ status\ to\ assign\ to\ seat\n
+comment3.params=
+comment3.target=java.lang.String\ getStatus()
+comment3.text=\n\ Gets\ seat\ status\n\n\ @return\ status\ of\ the\ seat\n
+numComments=4

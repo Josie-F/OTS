@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=UserManager
+comment0.text=\n\ UserManager\ Class\n\ MVC\ -\ controller\n
+comment1.params=bookingManagerInstance
+comment1.target=UserManager(BookingManager)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ ManageUser\n\ @param\ bookingManagerInstance\ instance\ of\ bookingManager\n
+comment2.params=password\ username\ userType\ signInMenuItem\ managerMenuItem\ viewMenuItem
+comment2.target=java.lang.String\ confirmCustomerDetails(java.lang.String,\ java.lang.String,\ java.lang.String,\ javax.swing.JMenuItem,\ javax.swing.JMenuItem,\ javax.swing.JMenuItem)
+comment2.text=\n\ Function\ that\ confirms\ a\ user's\ log\ in\ details\ and\ returns\ a\ scenario\n\ @param\ password\ password\ from\ input\ field\n\ @param\ username\ username\ from\ input\ field\n\ @param\ userType\ userType\ from\ input\ field\n\ @param\ signInMenuItem\ signIn\ menu\ tab\n\ @param\ managerMenuItem\ manager\ menu\ tab\n\ @param\ viewMenuItem\ view\ menu\ tab\n\ \n\ @return\ String\ login\ scenario\n
+comment3.params=
+comment3.target=User\ getUser()
+comment3.text=\n\ Function\ that\ returns\ User\n\n\ @return\ current\ user\n
+comment4.params=signOutMenuItem\ signInItem\ managerMenu\ browseMenu
+comment4.target=void\ logOut(javax.swing.JMenuItem,\ javax.swing.JMenuItem,\ javax.swing.JMenu,\ javax.swing.JMenu)
+comment4.text=\n\ Function\ that\ logs\ out\ a\ user\n\ \n\ @param\ signOutMenuItem\ signOut\ menu\ dropwdown\n\ @param\ signInItem\ signIn\ menu\ dropwdown\n\ @param\ managerMenu\ manager\ menu\ tab\n\ @param\ browseMenu\ view/browse\ tab\n\n
+comment5.params=password\ username\ signInMenuItem\ managerMenu
+comment5.target=User\ signUpVenueManager(java.lang.String,\ java.lang.String,\ javax.swing.JMenuItem,\ javax.swing.JMenuItem)
+comment5.text=\n\ Function\ that\ signs\ up\ Venue\ manager\n\n\ @param\ password\ password\ from\ input\ field\n\ @param\ username\ username\ from\ input\ field\n\ @param\ signInMenuItem\ signIn\ dropdown\n\ @param\ managerMenu\ manager\ menu\ tab\n\n\ @return\ VenueManager\n
+comment6.params=password\ username\ signInMenuItem
+comment6.target=User\ signUpConsumer(java.lang.String,\ java.lang.String,\ javax.swing.JMenuItem)
+comment6.text=\n\ Function\ that\ signs\ up\ Consumer\n\n\ @param\ password\ password\ from\ input\ field\n\ @param\ username\ username\ from\ input\ field\n\ @param\ signInMenuItem\ signIn\ dropdown\n\ @param\ managerMenu\ manager\ menu\ tab\n\n\ @return\ Consumer\n
+comment7.params=user\ signInMenuItem\ managerMenuItem\ viewMenuItem\ password\ username
+comment7.target=java.lang.String\ signIn(User,\ javax.swing.JMenuItem,\ javax.swing.JMenuItem,\ javax.swing.JMenuItem,\ java.lang.String,\ java.lang.String)
+comment7.text=\n\ Function\ that\ signs\ in\ a\ returning\ user\n\n\ @param\ user\ the\ user\ that\ needs\ to\ be\ signed\ in\n\ @param\ signInMenuItem\ signIn\ dropdown\n\ @param\ managerMenuItem\ manager\ menu\ dropdown\n\ @param\ password\ password\ from\ input\ field\n\ @param\ username\ username\ from\ input\ field\n\n\ @return\ String\ scenario\n
+numComments=8

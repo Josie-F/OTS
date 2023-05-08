@@ -1,0 +1,19 @@
+declare class called VenueManager which extends from User class {
+
+  Attribute: venueManagerId <- integer // identifier for the VenueManager object.
+
+  VenueManager Constructor {
+  call parent class constructor method with string: "VenueManager"
+  }
+
+  override function assignLoginVariables
+  input: password, username {
+    call parent class: assignLoginVariables method with username and password
+    call setId method
+  }
+
+  function setId {
+    generate a random number
+    assign consumerId <- random number
+  }
+}
